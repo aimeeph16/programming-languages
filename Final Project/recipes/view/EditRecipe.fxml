@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" styleClass="background" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipes.view.EditRecipeController">
+   <children>
+      <SplitPane dividerPositions="0.8371" orientation="VERTICAL" prefHeight="450.0" prefWidth="650.0" styleClass="background" stylesheets="@Theme.css">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background" stylesheets="@Theme.css">
+               <children>
+                  <TabPane layoutY="11.0" prefHeight="363.0" prefWidth="650.0" stylesheets="@Theme.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="11.0">
+                    <tabs>
+                      <Tab text="Details">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background2">
+                                 <children>
+                                    <GridPane layoutX="41.0" layoutY="29.0" prefHeight="286.0" prefWidth="566.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.5999755859375" minWidth="10.0" prefWidth="98.5999755859375" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.60003662109375" minWidth="10.0" prefWidth="437.4000244140625" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label prefHeight="31.0" prefWidth="150.0" text="Dish Name">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="31.0" prefWidth="150.0" text="Cuisine Type" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="31.0" prefWidth="150.0" text="Course" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="31.0" prefWidth="150.0" text="Duration(min)" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="dishnameField" prefHeight="36.0" prefWidth="411.0" promptText="What's in a name..." styleClass="text-field2" GridPane.columnIndex="1" />
+                                          <TextField fx:id="dishtypeField" prefHeight="36.0" prefWidth="411.0" promptText="Type your type here" styleClass="text-field2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="courseField" prefHeight="36.0" prefWidth="411.0" promptText="What if appetizers and desserts switched places?" styleClass="text-field2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="durationField" prefHeight="36.0" prefWidth="411.0" promptText="How long will the preparation be?" styleClass="text-field2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Ingredients">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background2">
+                                 <children>
+                                    <TextArea fx:id="ingredientsField" layoutX="15.0" layoutY="18.0" prefHeight="307.0" prefWidth="618.0" promptText="What do you need for this recipe?" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Procedures">
+                          <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background2">
+                                 <children>
+                                    <TextArea fx:id="proceduresField" layoutX="15.0" layoutY="18.0" prefHeight="307.0" prefWidth="618.0" promptText="ten-hut! What are your instructions, sir?" />
+                                 </children></AnchorPane>
+                          </content>
+                      </Tab>
+
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ButtonBar layoutX="324.0" layoutY="15.0" prefHeight="40.0" prefWidth="308.0">
+                    <buttons>
+                      <Button fx:id="saveB" defaultButton="true" mnemonicParsing="false" onAction="#saveButton" prefHeight="25.0" prefWidth="143.0" text="Save" />
+                        <Button fx:id="cancelB" minWidth="1.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="25.0" prefWidth="219.0" text="Cancel" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
